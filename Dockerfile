@@ -3,7 +3,7 @@ FROM ubuntu:latest
 ARG TARGETOS TARGETARCH
 
 RUN apt-get update && \
-    apt-get install -y wget libasound2 libgbm1 locales fonts-noto-cjk sudo
+    apt-get install -y wget libgbm1 locales fonts-noto-cjk sudo
 
 ENV DEB_FILE=linuxqq_3.2.1-17816_$TARGETARCH.deb
 
