@@ -18,6 +18,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build the docker image 和 push
+        uses: docker/build-push-action@v5
         run: |
           docker buildx create --use
           docker buildx build --platform linux/amd64,linux/arm64 --tag ${{ secrets.DOCKERHUB_USERNAME }}/ntqq-docker:latest --file Dockerfile --push .
