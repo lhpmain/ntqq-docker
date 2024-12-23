@@ -15,9 +15,9 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWD }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build the docker image and push
+      - name: Build the docker image 和 push
         run: |
           docker buildx create --use
           docker buildx build --platform linux/amd64,linux/arm64 --tag ${{ secrets.DOCKERHUB_USERNAME }}/ntqq-docker:latest --file Dockerfile --push .
